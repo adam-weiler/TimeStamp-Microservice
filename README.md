@@ -26,7 +26,11 @@ Example output:
 
 Online version:
 https://periodic-nightingale.glitch.me/api/timestamp/2015-12-15
+
 https://periodic-nightingale.glitch.me/api/timestamp/1450137600
+
 https://periodic-nightingale.glitch.me/api/timestamp/1450137600abcdefg
+
 https://periodic-nightingale.glitch.me/api/timestamp/
+
 https://periodic-nightingale.glitch.me/
