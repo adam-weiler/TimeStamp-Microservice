@@ -1,0 +1,31 @@
+{
+  "name": "fcc-project-timestamp",
+  "version": "0.0.5",
+  "description": "The Timestamp Microservice Apis project from Free Code Camp.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "cors": "^2.8.5",
+    "node": "^11.3.0"
+  },
+  "engines": {
+    "node": "4.4.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adam-weiler/Timestamp-Microservice"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "microservice",
+    "api",
+    "freecodecamp",
+    "glitch"
+  ],
+  "author": "Adam Weiler",
+  "license": "MIT"
+}
