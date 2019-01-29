@@ -18,30 +18,25 @@ app.get("/", function (req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 
-// your first API endpoint... 
-app.get("/api/hello", function (req, res) {
-  res.json({greeting: 'hello API'});
-});
-
 
 /*User can input 4 different options:
 Case 1: 2015-12-15 - A valid date.
-Case 2: 1450137600 - A valid date.
-Case 3: 1450137600abcdefg - An invalid date.
+Case 2: 1450137600 - A valid time in seconds.
+Case 3: 1450137600abcdefg - An invalid time.
 Case 4: (Empty) - An empty string.
 */
 
 app.get('/api/timestamp/:input', function (req, res) { //User input something. Case 1, 2, and 3. 
   let user_input = req.params.input;
  
-   if(!isNaN(user_input)) { //User input is a string, not a number. Case 1.
-     user_input = parseInt(user_input) * 1000; 
+   if(!isNaN(user_input)) { //User input a number. Case 2.
+     user_input = parseInt(user_input) * 1000; //Multiply by 1000 to get milliseconds.
    }
   
   let unix = new Date(user_input).getTime(); //Converts user_input to a Unix timestamp.
   let utc = new Date(user_input).toUTCString(); //Converts user_input to a UTC timestamp.
   
-  res.json({"unix": unix, "utc": utc})
+  res.json({"unix": unix, "utc": utc});
 })
 
 
@@ -49,7 +44,7 @@ app.get('/api/timestamp/', function (req, res) { //User input nothing. Case 4.
   let date_string = new Date(); //Will use current time.
   let date_time = date_string.toUTCString(); //Converts current time to a date_time.
   
-  res.json({"unix": date_string, "utc": date_time})
+  res.json({"unix": date_string, "utc": date_time});
 })
 
 // listen for requests :)
